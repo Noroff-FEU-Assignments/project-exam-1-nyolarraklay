@@ -1,0 +1,20 @@
+async function getUsers() {
+  const response = await fetch(authorHREF);
+  const users = await response.json();
+  return users;
+}
+
+function createUserHTML(author) {
+  const nameContainer = document.createElement("div");
+  nameContainer.classList.add("nameContainer");
+  const name = document.createElement("h3");
+  name.innerText = author.name;
+
+  nameContainer.append(name, divider, date);
+  description.append(nameContainer);
+}
+
+async function main() {
+  const authorName = await getUsers();
+  createUserHTML(authorName);
+}
