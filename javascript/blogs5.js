@@ -21,11 +21,11 @@ import {
   previous,
 } from "./import.js";
 
-const containerPage1 = document.querySelector(".filesContainerPage1");
+const containerPage2 = document.querySelector(".filesContainer");
 
-function createBlogFilesHTML(blog) {
-  const textContainerBlogsPage1 = document.createElement("div");
-  textContainerBlogsPage1.classList.add("textContainerBlogs");
+function createBlogFilesHTMLPage2(blog) {
+  const textContainerBlogs = document.createElement("div");
+  textContainerBlogs.classList.add("textContainerBlogs");
   const titleBlog = blog.title;
   const author = blog._links;
   const authorLink = author.author;
@@ -33,6 +33,9 @@ function createBlogFilesHTML(blog) {
   const image = blog.featured_media;
   let authorID = blog.author;
 
+  const blogContainer = document.createElement("div");
+  blogContainer.classList.add("blogContainer");
+  blogContainer.classList.add("blogCards");
   const button = document.createElement("button");
   button.classList.add("readMore");
   button.innerText = "Read More";
@@ -40,10 +43,6 @@ function createBlogFilesHTML(blog) {
   button.addEventListener("click", function redirectToPage() {
     location.href = `details.html?id=${blog.id}`;
   });
-
-  const blogContainerPage1 = document.createElement("div");
-  blogContainerPage1.classList.add("blogContainer");
-  blogContainerPage1.classList.add("blogCards");
 
   async function getImage() {
     const responseMedia = await fetch(mediaURL + image);
@@ -55,7 +54,7 @@ function createBlogFilesHTML(blog) {
     const blogImage = document.createElement("div");
     blogImage.classList.add("blogImage");
     blogImage.style.backgroundImage = `url(${image.guid.rendered})`;
-    blogContainerPage1.prepend(blogImage);
+    blogContainer.prepend(blogImage);
   }
 
   async function main() {
@@ -64,6 +63,8 @@ function createBlogFilesHTML(blog) {
   }
   main();
 
+  containerPage2.append(blogContainer);
+
   const titleName = document.createElement("h2");
   titleName.innerText = titleBlog.rendered;
 
@@ -71,7 +72,7 @@ function createBlogFilesHTML(blog) {
   excerpt.classList.add("excerpt");
   excerpt.innerHTML = blog.excerpt.rendered;
 
-  textContainerBlogsPage1.append(titleName, excerpt);
+  textContainerBlogs.append(titleName, excerpt);
 
   async function getContents() {
     const response = await fetch(authorUrl + authorID);
@@ -101,9 +102,9 @@ function createBlogFilesHTML(blog) {
     cardName.classList.add("cardsName");
     cardName.innerText = author.name;
     imageCardContent.append(cardName);
-    textContainerBlogsPage1.append(imageCardContent);
+    textContainerBlogs.append(imageCardContent);
 
-    textContainerBlogsPage1.append(button);
+    textContainerBlogs.append(button);
   }
 
   async function mainContent() {
@@ -112,57 +113,54 @@ function createBlogFilesHTML(blog) {
   }
 
   mainContent();
-  containerPage1.append(blogContainerPage1);
 
-  containerPage1.append(textContainerBlogsPage1);
+  containerPage2.append(textContainerBlogs);
 }
 
-async function getBlogsByPage() {
-  const response = await fetch(blogsUrl + blogsUrlPage + 1);
-  const blogs = await response.json();
-
-  return blogs;
-}
-
-function createBibleBlogsHTML(blogs) {
+function createBibleBlogsHTMLpage2(blogs) {
   for (let i = 0; i < blogs.length; i++) {
-    const bibleBlogsPage1 = blogs[i];
-    createBlogFilesHTML(bibleBlogsPage1);
+    const bibleBlogs = blogs[i];
+    createBlogFilesHTMLPage2(bibleBlogs);
   }
 }
 
-async function mainPage() {
-  const bibleVersePage1 = await getBlogsByPage();
-  createBibleBlogsHTML(bibleVersePage1);
-  return bibleVersePage1;
+async function getBlogsByPage2() {
+  const response = await fetch(blogsUrl + blogsUrlPage + 3);
+  const blogs = await response.json();
+  console.log(response);
+  return blogs;
 }
 
-mainPage();
+async function mainPage2() {
+  const bibleVerse = await getBlogsByPage2();
+  createBibleBlogsHTMLpage2(bibleVerse);
+  return bibleVerse;
+}
 
-// pagination
+mainPage2();
+
+// Pagination
 
 link.forEach(function (elem) {
   elem.addEventListener("click", activeLink);
 });
 
-backButton.style.display = "none";
-
-nxtButton.addEventListener("click", button2);
 backButton.addEventListener("click", button1);
 
-pageTwo.addEventListener("click", function redirectToProduct() {
-  location.href = "blogs2.html";
+pageOne.addEventListener("click", function redirectToPage() {
+  location.href = "blogs.html";
 });
 
-next.addEventListener("click", function redirectToProduct() {
-  location.href = "blogs2.html";
+previous.addEventListener("click", function redirectToProduct() {
+  location.href = "blogs4.html";
 });
-pageThree.addEventListener("click", function redirectToPage() {
-  location.href = "blogs3.html";
+
+pageTwo.addEventListener("click", function redirectToPage() {
+  location.href = "blogs2.html";
 });
 pageFour.addEventListener("click", function redirectToPage() {
   location.href = "blogs4.html";
 });
-pageFive.addEventListener("click", function redirectToPage() {
-  location.href = "blogs5.html";
+pageThree.addEventListener("click", function redirectToPage() {
+  location.href = "blogs3.html";
 });

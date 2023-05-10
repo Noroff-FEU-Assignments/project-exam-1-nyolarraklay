@@ -12,11 +12,18 @@ import {
   activeLink,
   link,
   currentValue,
+  pageOne,
+  pageTwo,
+  pageThree,
+  pageFour,
+  pageFive,
+  next,
+  previous,
 } from "./import.js";
 
-const containerPage2 = document.querySelector(".containerPage2");
+const containerPage = document.querySelector(".filesContainer");
 
-function createBlogFilesHTMLPage2(blog) {
+function createBlogFilesHTMLPage(blog) {
   const textContainerBlogs = document.createElement("div");
   textContainerBlogs.classList.add("textContainerBlogs");
   const titleBlog = blog.title;
@@ -56,7 +63,7 @@ function createBlogFilesHTMLPage2(blog) {
   }
   main();
 
-  containerPage2.append(blogContainer);
+  containerPage.append(blogContainer);
 
   const titleName = document.createElement("h2");
   titleName.innerText = titleBlog.rendered;
@@ -107,13 +114,13 @@ function createBlogFilesHTMLPage2(blog) {
 
   mainContent();
 
-  containerPage2.append(textContainerBlogs);
+  containerPage.append(textContainerBlogs);
 }
 
-function createBibleBlogsHTMLpage2(blogs) {
+function createBibleBlogsHTMLpage(blogs) {
   for (let i = 0; i < blogs.length; i++) {
     const bibleBlogs = blogs[i];
-    createBlogFilesHTMLPage2(bibleBlogs);
+    createBlogFilesHTMLPage(bibleBlogs);
   }
 }
 
@@ -126,7 +133,7 @@ async function getBlogsByPage2() {
 
 async function mainPage2() {
   const bibleVerse = await getBlogsByPage2();
-  createBibleBlogsHTMLpage2(bibleVerse);
+  createBibleBlogsHTMLpage(bibleVerse);
   return bibleVerse;
 }
 
@@ -140,30 +147,24 @@ link.forEach(function (elem) {
 nxtButton.addEventListener("click", button2);
 backButton.addEventListener("click", button1);
 
-const pageOne = document.querySelector(".page1");
 pageOne.addEventListener("click", function redirectToPage() {
   location.href = "blogs.html";
 });
 
-const previous = document.querySelector(".button1");
 previous.addEventListener("click", function redirectToProduct() {
   location.href = "blogs.html";
 });
 
-const next = document.querySelector(".button2");
 next.addEventListener("click", function redirectToProduct() {
   location.href = "blogs3.html";
 });
 
-const pageThree = document.querySelector(".page3");
 pageThree.addEventListener("click", function redirectToPage() {
   location.href = "blogs3.html";
 });
-const pageFour = document.querySelector(".page4");
 pageFour.addEventListener("click", function redirectToPage() {
   location.href = "blogs4.html";
 });
-const pageFive = document.querySelector(".page5");
 pageFive.addEventListener("click", function redirectToPage() {
   location.href = "blogs5.html";
 });

@@ -73,7 +73,7 @@ categoryHeading.innerText = "Trust in God's Guidance";
 
 const categoryParagraph = document.createElement("p");
 categoryParagraph.innerText =
-  "Let the bible guide your everyday and eternal life.";
+  "The bible, the real Influencer. Let the bible influence your everyday and eternal life.";
 
 const categoryListContainer = document.createElement("div");
 categoryListContainer.classList.add("listContainer");

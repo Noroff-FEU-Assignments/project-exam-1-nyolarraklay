@@ -338,8 +338,9 @@ h4 {
 /* blogPage */
 
 .filesContainer,
-.containerPage2,
-.categoriesContainer {
+.filesContainerPage1,
+.categoriesContainer,
+.containerPage2 {
   display: grid;
   grid-template-columns: 30vw 1fr;
   padding: 15vh;
@@ -415,6 +416,7 @@ h4 {
   background-color: rgb(252, 185, 93);
   padding: 5px;
   border-radius: 10px;
+  margin-top: 15px;
 }
 
 .paginationBlogs {

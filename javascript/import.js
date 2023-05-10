@@ -87,10 +87,12 @@ function createBlogHTML(blog) {
     blogContainer.prepend(blogImage);
   }
 
-  async function main() {
+  async function mainImages() {
     const blogImage = await getImage();
     createImageHTML(blogImage);
+  }
 
+  async function mainCategories() {
     const categories = await getCategory();
     createCategoryHTML(categories);
   }
@@ -104,7 +106,8 @@ function createBlogHTML(blog) {
   description.append(description1stLine, titleName);
   blogContainer.append(description);
   container.append(blogContainer);
-  main();
+  mainImages();
+  mainCategories();
 }
 
 async function getAuthor() {
@@ -149,11 +152,19 @@ function createAuthorHtml(author) {
     return content;
   }
 
+  const allPost = document.createElement("button");
+  allPost.classList.add("readMore");
+  allPost.innerText = "ALL POSTS";
+
+  allPost.addEventListener("click", function redirectPage() {
+    location.href = `authors.html?id=${author.id}`;
+  });
+
   function createContentHtML(content) {
     const cardDescription = document.createElement("p");
     cardDescription.classList.add("cardDescription");
     cardDescription.innerText += content.title.rendered;
-    cardContent.append(cardDescription);
+    cardContent.append(cardDescription, allPost);
   }
 
   function createContentsHtml(content) {
@@ -237,7 +248,31 @@ function activeLink() {
   nxtButton.style.display = "inline-flex";
 }
 
+// blog lists
+
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+
+async function getAuthorContent() {
+  const response = await fetch(usersUrl + id);
+  const blogs = await response.json();
+  return blogs;
+}
+
+const pageTwo = document.querySelector(".page2");
+const next = document.querySelector(".button2");
+const pageThree = document.querySelector(".page3");
+const pageFour = document.querySelector(".page4");
+const pageFive = document.querySelector(".page5");
+const pageOne = document.querySelector(".page1");
+const previous = document.querySelector(".button1");
+
 export {
+  getAuthorContent,
+  queryString,
+  params,
+  id,
   createAuthorsHTML,
   createBlogsHTML,
   getBlogs,
@@ -256,4 +291,11 @@ export {
   activeLink,
   link,
   currentValue,
+  pageOne,
+  pageTwo,
+  pageThree,
+  pageFour,
+  pageFive,
+  next,
+  previous,
 };
