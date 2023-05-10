@@ -29,6 +29,13 @@ function createBlogFilesHTMLPage2(blog) {
   const blogContainer = document.createElement("div");
   blogContainer.classList.add("blogContainer");
   blogContainer.classList.add("blogCards");
+  const button = document.createElement("button");
+  button.classList.add("readMore");
+  button.innerText = "Read More";
+
+  button.addEventListener("click", function redirectToPage() {
+    location.href = `details.html?id=${blog.id}`;
+  });
 
   async function getImage() {
     const responseMedia = await fetch(mediaURL + image);
@@ -89,10 +96,6 @@ function createBlogFilesHTMLPage2(blog) {
     cardName.innerText = author.name;
     imageCardContent.append(cardName);
     textContainerBlogs.append(imageCardContent);
-
-    const button = document.createElement("button");
-    button.classList.add("readMore");
-    button.innerText = "Read More";
 
     textContainerBlogs.append(button);
   }

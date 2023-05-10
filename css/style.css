@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -334,9 +338,21 @@ h4 {
 /* blogPage */
 
 .filesContainer,
-.containerPage2 {
+.containerPage2,
+.categoriesContainer {
   display: grid;
   grid-template-columns: 30vw 1fr;
+  padding: 15vh;
+  align-items: start;
+  justify-items: center;
+  grid-gap: 2vw;
+  margin: 0 auto;
+  min-width: 5vw;
+}
+
+.detailsContainer {
+  display: grid;
+  grid-template-rows: 50px 55vw 1fr;
   padding: 15vh;
   align-items: start;
   justify-items: center;
@@ -383,6 +399,9 @@ h4 {
   border: 1px solid grey;
   gap: 10px;
   width: 100%;
+}
+.detailsCards {
+  grid-template-rows: 90vh;
 }
 
 .textContainerBlogs {
@@ -455,4 +474,9 @@ h4 {
 .rightArrow {
   width: 24px;
   margin-left: 15px;
+}
+
+.authorSection {
+  text-align: center;
+  margin-top: 30px;
 }

@@ -42,7 +42,7 @@ function createBlogHTML(blog) {
   description1stLine.classList.add("firstLineDescription");
   const titleBlog = blog.title;
   const blogContainer = document.createElement("a");
-  blogContainer.href = `blogs.html?id=${blog.id}`;
+  blogContainer.href = `details.html?id=${blog.id}`;
   blogContainer.classList.add("blogContainer");
   blogContainer.classList.add("cards");
   blogContainer.id = blog.id;
