@@ -115,6 +115,10 @@ function createBlogFilesHTML(blog) {
     button.classList.add("readMore");
     button.innerText = "ALL POSTS";
 
+    button.addEventListener("click", function redirectPage() {
+      location.href = `authors.html?id=${author.id}`;
+    });
+
     authorSection.append(button);
     textContainerBlogsPage1.append(authorSection);
   }
