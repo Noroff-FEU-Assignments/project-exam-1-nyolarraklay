@@ -100,7 +100,7 @@ li {
 }
 
 .blogContainer h2 {
-  font-size: 2.5vh;
+  font-size: 2.2vh;
   text-align: left;
   align-self: center;
   margin-left: 10px;
@@ -114,18 +114,17 @@ li {
 
 .cards {
   display: grid;
-  grid-template-rows: 250px 90px;
+  grid-template-rows: 250px 110px;
   border-radius: 1rem;
   border: 1px solid grey;
   gap: 10px;
-  width: 350px;
+  width: 270px;
 }
 
 .blogsContainer {
   display: flex;
-  width: 350vw;
   margin: 20px;
-  gap: 50px;
+  gap: 28px;
 
   position: absolute;
   top: 0;
@@ -133,14 +132,14 @@ li {
 }
 
 .carousel {
-  height: 26em;
+  height: 27em;
   width: 100%;
-  max-width: 75em;
+  max-width: 93dvw;
   border-radius: 0.8em;
   overflow: hidden;
   box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
   position: relative;
-  margin: 15vh auto;
+  margin: 15vh 2vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -195,7 +194,7 @@ date {
   background-color: #fff;
   font-size: 15px;
   text-align: center;
-  width: 25%;
+  width: 35%;
   margin-left: 10px;
 }
 
@@ -247,13 +246,14 @@ date {
 .cardsFeatured {
   box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
   border-radius: 25px;
-  width: 320px;
+  width: 250px;
   background-color: white;
 }
 
 .featured {
   margin: 0 40px;
   display: flex;
+  flex-wrap: wrap;
   gap: 5vw;
 }
 
@@ -340,7 +340,9 @@ h4 {
 .filesContainer,
 .filesContainerPage1,
 .categoriesContainer,
-.containerPage2 {
+.containerPage2,
+.showPage1,
+.showPage2 {
   display: grid;
   grid-template-columns: 30vw 1fr;
   padding: 15vh;

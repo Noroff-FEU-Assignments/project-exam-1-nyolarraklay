@@ -202,37 +202,33 @@ async function mainAuthor() {
 
 // pagination
 
-function button2() {
-  if (currentValue < 5) {
-    link.forEach((element) => {
-      element.classList.remove("active");
-      backButton.style.display = "inline-flex";
-    });
-  }
-  currentValue++;
-  link[currentValue - 1].classList.add("active");
+// function button2() {
+//   if (currentValue < 5) {
+//     link.forEach((element) => {
+//       element.classList.remove("active");
+//       backButton.style.display = "inline-flex";
+//     });
+//   }
+//   currentValue++;
+//   link[currentValue - 1].classList.add("active");
 
-  if (currentValue === 5) {
-    nxtButton.style.display = "none";
-  }
-}
+//   if (currentValue === 5) {
+//     nxtButton.style.display = "none";
+//   }
+// }
 
-const nxtButton = document.querySelector(".button2");
-
-function button1() {
-  if ((currentValue > 1) & (currentValue < 6)) {
-    link.forEach((element) => {
-      element.classList.remove("active");
-      nxtButton.style.display = "inline-flex";
-    });
-  } else if (currentValue === 1) {
-    backButton.style.display = "none";
-  }
-  currentValue--;
-  link[currentValue - 1].classList.add("active");
-}
-
-const backButton = document.querySelector(".button1");
+// function button1() {
+//   if (currentValue > 1) {
+//     link.forEach((element) => {
+//       element.classList.remove("active");
+//       nxtButton.style.display = "inline-flex";
+//     });
+//   } else if (currentValue === 1) {
+//     backButton.style.display = "none";
+//   }
+//   currentValue--;
+//   link[currentValue - 1].classList.add("active");
+// }
 
 let link = document.querySelectorAll(".link");
 let currentValue = 2;
@@ -241,7 +237,7 @@ function activeLink() {
   link.forEach((element) => {
     element.classList.remove("active");
   });
-  let pageNumber = 0;
+
   event.target.classList.add("active");
   currentValue = event.target.value;
   backButton.style.display = "inline-flex";
@@ -260,14 +256,6 @@ async function getAuthorContent() {
   return blogs;
 }
 
-const pageTwo = document.querySelector(".page2");
-const next = document.querySelector(".button2");
-const pageThree = document.querySelector(".page3");
-const pageFour = document.querySelector(".page4");
-const pageFive = document.querySelector(".page5");
-const pageOne = document.querySelector(".page1");
-const previous = document.querySelector(".button1");
-
 export {
   getAuthorContent,
   queryString,
@@ -284,18 +272,7 @@ export {
   blogsUrlPage,
   getAuthor,
   mainAuthor,
-  button1,
-  button2,
-  nxtButton,
-  backButton,
   activeLink,
   link,
   currentValue,
-  pageOne,
-  pageTwo,
-  pageThree,
-  pageFour,
-  pageFive,
-  next,
-  previous,
 };
