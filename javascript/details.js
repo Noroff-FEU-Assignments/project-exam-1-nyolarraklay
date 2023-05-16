@@ -56,9 +56,9 @@ function createBlogFilesHTML(blog) {
   }
 
   function createImageHTML(image) {
-    const blogImage = document.createElement("div");
+    const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
-    blogImage.style.backgroundImage = `url(${image.guid.rendered})`;
+    blogImage.src = image.guid.rendered;
     blogContainerPage1.prepend(blogImage);
   }
 

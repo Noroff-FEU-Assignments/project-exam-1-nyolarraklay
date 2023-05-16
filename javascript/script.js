@@ -99,6 +99,10 @@ function createCategoryHtml(category) {
   categoryName.classList.add("categoryName");
   categoryName.innerText = category.name;
 
+  if (category.name === "Uncategorized") {
+    categoryName.classList.add("uncategorized");
+  }
+
   categoryListContainer.append(categoryName);
 }
 

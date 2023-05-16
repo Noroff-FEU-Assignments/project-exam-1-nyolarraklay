@@ -86,7 +86,8 @@ li {
 
 .contentContainer {
   display: grid;
-  grid-template-rows: 1fr 70vh 1fr;
+  grid-template-rows: auto 70vh auto;
+  grid-gap: 5vh;
 }
 
 .nameContainer {
@@ -107,9 +108,17 @@ li {
 }
 
 .blogImage {
+  display: grid;
+  grid-template-rows: 40vh;
+  border-radius: 1rem;
+  border: 1px solid grey;
+  gap: 10px;
+  width: 100%;
+}
+
+.blogBackground {
   background-size: cover;
   background-position: center;
-  border-radius: 1rem;
 }
 
 .cards {
@@ -251,10 +260,11 @@ date {
 }
 
 .featured {
-  margin: 0 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 5vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .imageCardContent,
@@ -305,7 +315,7 @@ date {
 .spiritualImage {
   width: 40vw;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
 }
 
 .footer {
@@ -345,7 +355,7 @@ h4 {
 .showPage2 {
   display: grid;
   grid-template-columns: 30vw 1fr;
-  padding: 15vh;
+  padding: 15vh 20px;
   align-items: start;
   justify-items: center;
   grid-gap: 2vw;
@@ -355,13 +365,19 @@ h4 {
 
 .detailsContainer {
   display: grid;
-  grid-template-rows: 50px 55vw 1fr;
-  padding: 15vh;
+  grid-template-rows: auto auto auto;
+  padding: 15vh 15px;
   align-items: start;
   justify-items: center;
   grid-gap: 2vw;
-  margin: 0 auto;
   min-width: 5vw;
+}
+
+.detailsContainer img {
+  border-radius: 1rem;
+  border: 1px solid grey;
+  gap: 9px;
+  width: 92svw;
 }
 
 .imageCircleContent {
@@ -395,14 +411,6 @@ h4 {
   align-self: center;
 }
 
-.blogCards {
-  display: grid;
-  grid-template-rows: 40vh;
-  border-radius: 1rem;
-  border: 1px solid grey;
-  gap: 10px;
-  width: 100%;
-}
 .detailsCards {
   grid-template-rows: 90vh;
 }
@@ -483,4 +491,257 @@ h4 {
 .authorSection {
   text-align: center;
   margin-top: 30px;
+}
+.uncategorized {
+  display: none;
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+  /**navigation**/
+
+  .product {
+    text-align: center;
+    display: grid;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    transform: translateY(2px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navMenu {
+    position: fixed;
+    background: rgb(252, 185, 93);
+
+    top: 0;
+    gap: 0;
+    flex-direction: column;
+    width: 35%;
+    text-align: center;
+    transition: 0.3s;
+    left: 100%;
+  }
+
+  .navItem {
+    margin: 16px 0;
+  }
+
+  .navMenu.active {
+    left: 61%;
+    top: 4%;
+  }
+  .logo img {
+    width: 150px;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background-color: #000000d6;
+    width: 96svw;
+    margin-top: 25px;
+  }
+
+  .featuredContainer {
+    display: flex;
+    align-items: center;
+    gap: 5vh;
+    flex-direction: column;
+    background-color: #80808017;
+    width: 96svw;
+  }
+
+  .categories {
+    padding: 0px 15px;
+    display: grid;
+    margin: 0;
+    grid-template-columns: 50vw 50vw;
+    gap: 10px;
+    width: 90vw;
+  }
+
+  .textContainer {
+    display: grid;
+    grid-template-rows: 40px 1fr 1fr 2fr;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    text-align: center;
+    align-items: center;
+    padding: 1vw -2vw;
+    justify-content: center;
+  }
+
+  .spiritualImage {
+    width: 40vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: -325px;
+    background-position-y: 53px;
+  }
+  .filesContainer,
+  .filesContainerPage1,
+  .categoriesContainer,
+  .containerPage2,
+  .showPage1,
+  .showPage2 {
+    display: flex;
+    flex-direction: column;
+    padding: 15vh 45px;
+    align-items: start;
+    justify-items: center;
+    grid-gap: 2vw;
+    margin: 0 auto;
+    min-width: 5vw;
+  }
+  .blogList .link {
+    margin: 0px 0px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 399px) {
+  .spiritualImage {
+    display: none;
+  }
+
+  .product {
+    text-align: center;
+    display: grid;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    transform: translateY(2px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navMenu {
+    position: fixed;
+    background: rgb(252, 185, 93);
+
+    top: 0;
+    gap: 0;
+    flex-direction: column;
+    width: 35%;
+    text-align: center;
+    transition: 0.3s;
+    left: 100%;
+  }
+
+  .navItem {
+    margin: 16px 0;
+  }
+
+  .navMenu.active {
+    left: 0;
+  }
+  .logo img {
+    width: 150px;
+  }
+  .blogImage {
+    background-size: contain;
+
+    background-repeat: no-repeat;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-rows: 140px 75px;
+    border-radius: 1rem;
+    border: 1px solid grey;
+    gap: 10px;
+    width: 210px;
+  }
+
+  .category {
+    width: 45%;
+  }
+  .blogContainer h2 {
+    font-size: 2 vh;
+  }
+  .blogsContainer {
+    margin: 5px;
+    gap: 28px;
+  }
+  date {
+    width: 40%;
+  }
+
+  .carousel {
+    height: 20em;
+    max-width: 90dvw;
+  }
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .listContainer {
+    align-self: center;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  .cardsFeatured {
+    width: 175px;
+  }
+
+  .footer {
+    display: flex;
+    margin-top: 20px;
+    justify-items: center;
+    background-color: #000000d6;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .blogList {
+    margin: 20px 15px;
+  }
+
+  .blogList .link {
+    margin: 0px 0px;
+    width: 18px;
+  }
+  .filesContainer,
+  .filesContainerPage1,
+  .categoriesContainer,
+  .containerPage2,
+  .showPage1,
+  .showPage2 {
+    display: flex;
+    flex-direction: column;
+    padding: 15vh 45px;
+    align-items: start;
+    justify-items: center;
+    grid-gap: 2vw;
+    margin: 0 auto;
+    min-width: 5vw;
+  }
+  .textContainerBlogs h2 {
+    font-size: 2.5vh;
+  }
+  .cardsName {
+    font-size: 2vh;
+  }
 }

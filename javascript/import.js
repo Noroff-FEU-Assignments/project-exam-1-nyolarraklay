@@ -83,6 +83,7 @@ function createBlogHTML(blog) {
   function createImageHTML(image) {
     const blogImage = document.createElement("div");
     blogImage.classList.add("blogImage");
+    blogImage.classList.add("blogBackground");
     blogImage.style.backgroundImage = `url(${image.guid.rendered})`;
     blogContainer.prepend(blogImage);
   }
@@ -240,8 +241,6 @@ function activeLink() {
 
   event.target.classList.add("active");
   currentValue = event.target.value;
-  backButton.style.display = "inline-flex";
-  nxtButton.style.display = "inline-flex";
 }
 
 // blog lists

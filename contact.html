@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BibleVerse | Home</title>
+    <meta name="description" content="Let the bible influence our life." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/styleContact.css" />
+    <script src="/javascript/footer.js" defer type="module"></script>
+    <script src="/javascript/contact.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <div class="topSection">
+        <div class="nav-container">
+          <a href="#" class="logo">
+            <img src="image/bibleVerseLogo.png" alt="company logo" />
+          </a>
+          <nav class="navbar">
+            <ul class="navMenu">
+              <li class="navItem">
+                <a class="navLink" href="index.html">Home</a>
+              </li>
+              <li class="navItem">
+                <a class="navLink" href="about.html">About</a>
+              </li>
+              <li class="navItem">
+                <a class="navLink" href="blogs5.html">Blogs</a>
+              </li>
+              <li class="navItem">
+                <a class="navLink" href="contact.html">Contact</a>
+              </li>
+              <li class="navItem">
+                <a class="navLink" href="#"
+                  ><ion-icon name="search-outline"></ion-icon>Search</a
+                >
+              </li>
+            </ul>
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </nav>
+        </div>
+        <div class="separator"></div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="contact-box">
+          <div class="left"></div>
+          <div class="right">
+            <h2>Contact Us</h2>
+            <input type="text" class="field name" placeholder="Your Name" />
+            <div class="form-error" id="nameError">Please enter your name</div>
+            <input type="text" class="field email" placeholder="Your Email" />
+            <div class="form-error" id="emailError">
+              Please enter a valid email address
+            </div>
+            <input type="text" class="field phone" placeholder="Phone" />
+            <textarea placeholder="Message" class="field message"></textarea>
+            <div class="character-count">Character count: <span>0</span></div>
+            <div class="success"></div>
+            <button class="btn">Send</button>
+          </div>
+        </div>
+      </div>
+      <div class="socialContainer">
+        <h2>Follow Us on Social Media</h2>
+        <div class="contact-box socialBox">
+          <div class="left socialImage"></div>
+          <div class="right rightSocialMedia">
+            <div class="fbContainer">
+              <h3 class="facebook">Facebook</h3>
+              <ion-icon name="logo-facebook"></ion-icon>
+            </div>
+            <div class="tweetContainer">
+              <h3 class="twitter">Twitter</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer"></div>
+      <p class="copywright">&copy; BibleVerse 2023</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

@@ -43,9 +43,9 @@ function createBlogFilesHTMLPage2(blog) {
   }
 
   function createImageHTML(image) {
-    const blogImage = document.createElement("div");
+    const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
-    blogImage.style.backgroundImage = `url(${image.guid.rendered})`;
+    blogImage.src = image.guid.rendered;
     blogContainer.prepend(blogImage);
   }
 
@@ -165,10 +165,12 @@ function createBlogFilesHTML(blog) {
   }
 
   function createImageHTML(image) {
-    const blogImage = document.createElement("div");
+    const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
-    blogImage.style.backgroundImage = `url(${image.guid.rendered})`;
+    const imageHref = image.guid.rendered;
+    blogImage.src = image.guid.rendered;
     blogContainerPage1.prepend(blogImage);
+    console.log(imageHref);
   }
 
   async function main() {
@@ -284,9 +286,9 @@ function createBlogFilesHTMLPage(blog) {
   }
 
   function createImageHTML(image) {
-    const blogImage = document.createElement("div");
+    const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
-    blogImage.style.backgroundImage = `url(${image.guid.rendered})`;
+    blogImage.src = image.guid.rendered;
     blogContainer.prepend(blogImage);
   }
 
