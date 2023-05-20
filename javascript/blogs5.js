@@ -390,7 +390,7 @@ link.forEach(function (elem) {
 });
 
 pageOne.addEventListener("click", function redirectToPage() {
-  pageContainer.style.display = "grid";
+  pageContainer.style.display = "flex";
   pageContainerPage3.style.display = "none";
   pageContainerPage2.style.display = "none";
 });
@@ -398,13 +398,13 @@ pageOne.addEventListener("click", function redirectToPage() {
 pageTwo.addEventListener("click", function redirectToPage() {
   pageContainer.style.display = "none";
   pageContainerPage3.style.display = "none";
-  pageContainerPage2.style.display = "grid";
+  pageContainerPage2.style.display = "flex";
 });
 
 pageFour.addEventListener("click", function redirectToPage() {});
 
 pageThree.addEventListener("click", function redirectToPage() {
   pageContainer.style.display = "none";
-  pageContainerPage3.style.display = "grid";
+  pageContainerPage3.style.display = "flex";
   pageContainerPage2.style.display = "none";
 });

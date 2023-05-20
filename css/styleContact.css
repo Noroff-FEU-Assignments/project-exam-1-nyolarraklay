@@ -121,7 +121,7 @@ textarea {
 
 .socialBox {
   max-width: 1200px;
-  height: 60vh;
+  height: 90vh;
 }
 
 .socialImage {
@@ -131,8 +131,29 @@ textarea {
 }
 
 .rightSocialMedia {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.fbImage img {
+  width: 15vw;
+}
+
+.tweetContainer,
+.fbContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 25px 15vw 20px 20px;
+}
+
+.website,
+.socialSite {
+  font-size: 10px;
+}
+
+.website {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 880px) {
@@ -141,5 +162,9 @@ textarea {
   }
   .left {
     height: 200px;
+  }
+  .left {
+    height: 200px;
+    max-width: 1200px;
   }
 }
