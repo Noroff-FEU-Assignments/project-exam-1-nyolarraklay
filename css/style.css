@@ -7,6 +7,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
 }
 
 .nav-container {
@@ -28,7 +29,6 @@ nav {
 nav a {
   display: inline-block;
   text-decoration: none;
-  padding: 5px;
   color: rgb(24, 21, 21);
 }
 li {
@@ -86,8 +86,16 @@ li {
 
 .contentContainer {
   display: grid;
-  grid-template-rows: auto 70vh auto;
-  grid-gap: 5vh;
+  grid-template-rows: repeat(3, 100vh);
+}
+.latestPost {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15vh;
+}
+
+.latestPost h1 {
+  text-align: center;
 }
 
 .nameContainer {
@@ -148,7 +156,7 @@ li {
   overflow: hidden;
   box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
   position: relative;
-  margin: 15vh 2vw;
+  margin: 0 2vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -373,11 +381,19 @@ h4 {
   min-width: 5vw;
 }
 
+.excerpt {
+  width: 85%;
+  margin-inline: auto;
+}
+
 .detailsContainer img {
+  object-position: 50%;
   border-radius: 1rem;
   border: 1px solid grey;
   gap: 9px;
-  width: 92svw;
+
+  object-fit: cover;
+  height: 40vh;
 }
 
 .imageCircleContent {
@@ -496,8 +512,24 @@ h4 {
   display: none;
 }
 
+.modal {
+  width: 47%;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 25px auto;
+}
+.modal::backdrop {
+  background: rgb(252, 185, 93);
+  opacity: 0.5;
+}
+
 @media (min-width: 400px) and (max-width: 700px) {
   /**navigation**/
+
+  footer {
+    margin-top: 20vh;
+  }
 
   .product {
     text-align: center;
@@ -610,11 +642,35 @@ h4 {
     margin: 0px 0px;
     width: 30px;
   }
+  .modal {
+    width: 100vw;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 60px 20px;
+  }
 }
 
 @media (max-width: 399px) {
+  .modal {
+    width: 100vw;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 60px 20px;
+  }
+
   .spiritualImage {
     display: none;
+  }
+
+  .detailsContainer img {
+    object-position: 30%;
+    border-radius: 1rem;
+    border: 1px solid grey;
+    gap: 9px;
+    object-fit: cover;
+    height: 30vh;
   }
 
   .product {
@@ -663,6 +719,7 @@ h4 {
     background-size: contain;
 
     background-repeat: no-repeat;
+    cursor: pointer;
   }
 
   .cards {

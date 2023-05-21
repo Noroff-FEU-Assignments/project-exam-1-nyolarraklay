@@ -1,0 +1,49 @@
+.aboutUsContainer {
+  padding: 100px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutImg {
+  background: linear-gradient(#0f0d0d00, rgb(24 21 21)),
+    url("/image/shakehands.jpg");
+  /* background-image: url("/image/shakehands.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+}
+
+.aboutUsTitle {
+  color: white;
+  padding: 250px 0 250px 0;
+  font-size: 40px;
+}
+
+.aboutImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 76vh;
+}
+
+.aboutButton {
+  align-self: flex-end;
+  padding: 20px 0;
+}
+
+.askButton {
+  padding: 5px;
+  text-align: end;
+  background-color: rgb(252, 185, 93);
+}
+
+.aboutContainer {
+  width: 70%;
+  margin-inline: auto;
+}
+.abouText {
+  text-align: left;
+}

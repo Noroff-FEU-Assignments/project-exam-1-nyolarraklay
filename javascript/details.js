@@ -59,7 +59,27 @@ function createBlogFilesHTML(blog) {
     const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
     blogImage.src = image.guid.rendered;
+    blogImage.alt = image.alt_text;
     blogContainerPage1.prepend(blogImage);
+
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("modal");
+    // const modalImage = document.createElement("img");
+    // modalImage.classList.add("blogImage");
+    // modalImage.src = image.guid.rendered;
+    // modalImage.alt = image.alt_text;
+    dialog.style.backgroundImage = `url("${image.guid.rendered}")`;
+
+    // dialog.append(modalImage);
+    blogContainerPage1.append(dialog);
+
+    blogImage.addEventListener("click", () => {
+      dialog.showModal();
+    });
+
+    dialog.addEventListener("click", () => {
+      dialog.close();
+    });
   }
 
   async function main() {

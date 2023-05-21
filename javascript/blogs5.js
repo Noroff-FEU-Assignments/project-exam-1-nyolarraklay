@@ -46,7 +46,26 @@ function createBlogFilesHTMLPage2(blog) {
     const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
     blogImage.src = image.guid.rendered;
+    blogImage.alt = image.alt_text;
     blogContainer.prepend(blogImage);
+
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("modal");
+    const modalImage = document.createElement("img");
+    modalImage.classList.add("blogImage");
+    modalImage.src = image.guid.rendered;
+    modalImage.alt = image.alt_text;
+
+    dialog.append(modalImage);
+    blogContainer.append(dialog);
+
+    blogImage.addEventListener("click", () => {
+      dialog.showModal();
+    });
+
+    dialog.addEventListener("click", () => {
+      dialog.close();
+    });
   }
 
   async function main() {
@@ -170,7 +189,24 @@ function createBlogFilesHTML(blog) {
     const imageHref = image.guid.rendered;
     blogImage.src = image.guid.rendered;
     blogContainerPage1.prepend(blogImage);
-    console.log(imageHref);
+
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("modal");
+    const modalImage = document.createElement("img");
+    modalImage.classList.add("blogImage");
+    modalImage.src = image.guid.rendered;
+    modalImage.alt = image.alt_text;
+
+    dialog.append(modalImage);
+    blogContainerPage1.append(dialog);
+
+    blogImage.addEventListener("click", () => {
+      dialog.showModal();
+    });
+
+    dialog.addEventListener("click", () => {
+      dialog.close();
+    });
   }
 
   async function main() {
@@ -290,6 +326,24 @@ function createBlogFilesHTMLPage(blog) {
     blogImage.classList.add("blogImage");
     blogImage.src = image.guid.rendered;
     blogContainer.prepend(blogImage);
+
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("modal");
+    const modalImage = document.createElement("img");
+    modalImage.classList.add("blogImage");
+    modalImage.src = image.guid.rendered;
+    modalImage.alt = image.alt_text;
+
+    dialog.append(modalImage);
+    blogContainer.append(dialog);
+
+    blogImage.addEventListener("click", () => {
+      dialog.showModal();
+    });
+
+    dialog.addEventListener("click", () => {
+      dialog.close();
+    });
   }
 
   async function main() {
@@ -390,7 +444,7 @@ link.forEach(function (elem) {
 });
 
 pageOne.addEventListener("click", function redirectToPage() {
-  pageContainer.style.display = "flex";
+  pageContainer.style.display = "grid";
   pageContainerPage3.style.display = "none";
   pageContainerPage2.style.display = "none";
 });
@@ -398,13 +452,13 @@ pageOne.addEventListener("click", function redirectToPage() {
 pageTwo.addEventListener("click", function redirectToPage() {
   pageContainer.style.display = "none";
   pageContainerPage3.style.display = "none";
-  pageContainerPage2.style.display = "flex";
+  pageContainerPage2.style.display = "grid";
 });
 
 pageFour.addEventListener("click", function redirectToPage() {});
 
 pageThree.addEventListener("click", function redirectToPage() {
   pageContainer.style.display = "none";
-  pageContainerPage3.style.display = "flex";
+  pageContainerPage3.style.display = "grid";
   pageContainerPage2.style.display = "none";
 });

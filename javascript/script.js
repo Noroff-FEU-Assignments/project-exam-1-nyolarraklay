@@ -28,7 +28,7 @@ function slide(id) {
   pagination[id].classList.add("active");
 }
 
-let interval = setInterval(autoSlide, 4000);
+let interval = setInterval(4000);
 let imgId = 1;
 
 function autoSlide() {
@@ -47,7 +47,7 @@ for (let i = 0; i < pagination.length; i++) {
 
     imgId = i + 1;
 
-    interval = setInterval(autoSlide, 7000);
+    interval = setInterval(7000);
   });
 }
 
