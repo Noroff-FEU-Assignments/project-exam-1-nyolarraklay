@@ -86,7 +86,7 @@ li {
 
 .contentContainer {
   display: grid;
-  grid-template-rows: repeat(3, 100vh);
+  grid-template-rows: 100vh 100vh auto;
 }
 .latestPost {
   display: flex;
@@ -526,10 +526,6 @@ h4 {
 
 @media (min-width: 400px) and (max-width: 700px) {
   /**navigation**/
-
-  footer {
-    margin-top: 20vh;
-  }
 
   .product {
     text-align: center;
