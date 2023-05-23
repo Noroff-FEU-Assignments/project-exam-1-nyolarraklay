@@ -14,43 +14,6 @@ async function main() {
 
 main();
 
-const slider = document.querySelector(".carousel");
-const imgContainer = document.querySelector(".blogsContainer");
-const pagination = document.querySelectorAll(".pagination span");
-
-console.log(pagination);
-
-function slide(id) {
-  imgContainer.style.left = -100 * id + "%";
-  pagination.forEach((pag) => {
-    pag.classList.remove("active");
-  });
-  pagination[id].classList.add("active");
-}
-
-let interval = setInterval(4000);
-let imgId = 1;
-
-function autoSlide() {
-  if (imgId > pagination.length - 1) {
-    imgId = 0;
-  }
-  slide(imgId);
-  imgId++;
-}
-
-for (let i = 0; i < pagination.length; i++) {
-  pagination[i].addEventListener("click", () => {
-    clearInterval(interval);
-
-    slide(i);
-
-    imgId = i + 1;
-
-    interval = setInterval(7000);
-  });
-}
-
 const categoriesSection = document.querySelector(".categories");
 const categoriesContainer = document.createElement("div");
 const categoriesImage = document.createElement("div");
