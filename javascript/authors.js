@@ -33,9 +33,14 @@ function createBlogFilesHTML(blog) {
   blogContainerPage1.classList.add("blogCards");
 
   async function getImage() {
-    const responseMedia = await fetch(mediaURL + image);
-    const imageMedia = await responseMedia.json();
-    return imageMedia;
+    try {
+      const responseMedia = await fetch(mediaURL + image);
+      const imageMedia = await responseMedia.json();
+      return imageMedia;
+    } catch (error) {
+      console.error(error);
+      container.innerHTML = message("error", error);
+    }
   }
 
   function createImageHTML(image) {

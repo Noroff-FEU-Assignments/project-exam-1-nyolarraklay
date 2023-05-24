@@ -77,3 +77,27 @@ document.querySelectorAll(".navLink").forEach((n) =>
     navigation.classList.remove("active");
   })
 );
+
+function redirectContact() {
+  location.href = "contact.html";
+}
+function redirectAbout() {
+  location.href = "about.html";
+}
+function redirectFacebook() {
+  location.href = "facebook.com";
+}
+function redirectTwitter() {
+  location.href = "twitter.com";
+}
+function redirectInstagram() {
+  location.href = "instagram.com";
+}
+contactUs.addEventListener("click", redirectContact);
+newsletter.addEventListener("click", redirectContact);
+aboutUs.addEventListener("click", redirectAbout);
+faq.addEventListener("click", redirectAbout);
+belief.addEventListener("click", redirectAbout);
+facebook.addEventListener("click", redirectFacebook);
+twitter.addEventListener("click", redirectTwitter);
+instagram.addEventListener("click", redirectInstagram);

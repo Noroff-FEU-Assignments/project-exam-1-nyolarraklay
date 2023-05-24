@@ -14,10 +14,15 @@ const categoriesUrl = base + wpBase + postBase + categoriesBase;
 import { createBibleBlogsHTML } from "./authors.js";
 
 async function getBlogs() {
-  const response = await fetch(categoriesUrl + id);
-  const blogs = await response.json();
-  console.log(blogs);
-  return blogs;
+  try {
+    const response = await fetch(categoriesUrl + id);
+    const blogs = await response.json();
+    console.log(blogs);
+    return blogs;
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = message("error", error);
+  }
 }
 
 getBlogs();

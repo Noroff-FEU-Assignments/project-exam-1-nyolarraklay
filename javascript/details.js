@@ -22,12 +22,15 @@ const blogsUrlPage = "?per_page=5&page=";
 
 const details = document.querySelector(".detailsContainer");
 const titleBlogs = document.querySelector("title");
+const loading = document.querySelector(".loading");
 
 async function getBlogs() {
   const response = await fetch(blogsUrl + id);
   const blogs = await response.json();
+  loading.style.display = "none";
   console.log(blogs);
   return blogs;
+  l;
 }
 
 getBlogs();
@@ -45,8 +48,6 @@ function createBlogFilesHTML(blog) {
   titleBlogs.innerText = `Blogs | ${titleBlog.rendered}`;
 
   const blogContainerPage1 = document.createElement("div");
-  blogContainerPage1.classList.add("blogContainer");
-  blogContainerPage1.classList.add("blogCards");
   blogContainerPage1.classList.add("detailsCards");
 
   async function getImage() {
@@ -57,17 +58,14 @@ function createBlogFilesHTML(blog) {
 
   function createImageHTML(image) {
     const blogImage = document.createElement("img");
-    blogImage.classList.add("blogImage");
+    blogImage.classList.add("blogImageDetails");
     blogImage.src = image.guid.rendered;
     blogImage.alt = image.alt_text;
     blogContainerPage1.prepend(blogImage);
 
     const dialog = document.createElement("dialog");
-    dialog.classList.add("modal");
-    // const modalImage = document.createElement("img");
-    // modalImage.classList.add("blogImage");
-    // modalImage.src = image.guid.rendered;
-    // modalImage.alt = image.alt_text;
+    dialog.classList.add("modalDetails");
+
     dialog.style.backgroundImage = `url("${image.guid.rendered}")`;
 
     // dialog.append(modalImage);

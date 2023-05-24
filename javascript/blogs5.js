@@ -10,6 +10,11 @@ import {
   currentValue,
 } from "./import.js";
 
+const sortFormA = document.querySelector(".atoz");
+const sortFormB = document.querySelector(".ztoa");
+
+const loading = document.querySelector(".loading");
+
 const containerPage2 = document.querySelector(".allPagesContainer");
 
 const pageContainerPage3 = document.createElement("div");
@@ -71,12 +76,14 @@ function createBlogFilesHTMLPage2(blog) {
   async function main() {
     const blogImage = await getImage();
     createImageHTML(blogImage);
+    loading.style.display = "none";
   }
   main();
 
   pageContainerPage3.append(blogContainer);
 
   const titleName = document.createElement("h2");
+  const name = titleBlog.rendered;
   titleName.innerText = titleBlog.rendered;
 
   const excerpt = document.createElement("p");
@@ -125,7 +132,7 @@ function createBlogFilesHTMLPage2(blog) {
 
   mainContent();
 
-  pageContainerPage3.append(textContainerBlogs);
+  blogContainer.append(textContainerBlogs);
   containerPage2.append(pageContainerPage3);
 }
 
@@ -144,9 +151,47 @@ async function getBlogsByPage3() {
 }
 
 async function mainPage3() {
-  const bibleVerse = await getBlogsByPage3();
-  createBibleBlogsHTMLpage2(bibleVerse);
-  return bibleVerse;
+  try {
+    const bibleVerse = await getBlogsByPage3();
+    createBibleBlogsHTMLpage2(bibleVerse);
+
+    // sort
+    sortFormA.addEventListener("click", function () {
+      pageContainerPage3.innerHTML = "";
+      const sortedProducts = bibleVerse.sort(function (a, b) {
+        if (a.date > b.date) {
+          return 1;
+        } else if (a.date < b.date) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log(sortedProducts);
+
+      createBibleBlogsHTMLpage2(sortedProducts);
+    });
+    sortFormB.addEventListener("click", function () {
+      pageContainerPage3.innerHTML = "";
+      const sortedProducts = bibleVerse.sort(function (a, b) {
+        if (a.date < b.date) {
+          return 1;
+        } else if (a.date > b.date) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log(sortedProducts);
+
+      createBibleBlogsHTMLpage2(sortedProducts);
+    });
+
+    return bibleVerse;
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = message("error", error);
+  }
 }
 
 mainPage3();
@@ -155,6 +200,7 @@ mainPage3();
 
 const pageContainer = document.createElement("div");
 pageContainer.classList.add("showPage1");
+
 function createBlogFilesHTML(blog) {
   const textContainerBlogsPage1 = document.createElement("div");
   textContainerBlogsPage1.classList.add("textContainerBlogs");
@@ -264,7 +310,8 @@ function createBlogFilesHTML(blog) {
 
   mainContent();
 
-  pageContainer.append(blogContainerPage1, textContainerBlogsPage1);
+  blogContainerPage1.append(textContainerBlogsPage1);
+  pageContainer.append(blogContainerPage1);
   containerPage2.append(pageContainer);
 }
 
@@ -283,9 +330,46 @@ function createBibleBlogsHTML(blogs) {
 }
 
 async function mainPage() {
-  const bibleVersePage1 = await getBlogsByPage();
-  createBibleBlogsHTML(bibleVersePage1);
-  return bibleVersePage1;
+  try {
+    const bibleVersePage1 = await getBlogsByPage();
+    createBibleBlogsHTML(bibleVersePage1);
+    // sort
+    sortFormA.addEventListener("click", function () {
+      pageContainer.innerHTML = "";
+      const sortedProducts = bibleVersePage1.sort(function (a, b) {
+        if (a.date > b.date) {
+          return 1;
+        } else if (a.date < b.date) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log(sortedProducts);
+
+      createBibleBlogsHTML(sortedProducts);
+    });
+    sortFormB.addEventListener("click", function () {
+      pageContainer.innerHTML = "";
+      const sortedProducts = bibleVersePage1.sort(function (a, b) {
+        if (a.date < b.date) {
+          return 1;
+        } else if (a.date > b.date) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log(sortedProducts);
+
+      createBibleBlogsHTML(sortedProducts);
+    });
+
+    return bibleVersePage1;
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = message("error", error);
+  }
 }
 
 mainPage();
@@ -403,7 +487,7 @@ function createBlogFilesHTMLPage(blog) {
 
   mainContent();
 
-  pageContainerPage2.append(textContainerBlogs);
+  blogContainer.append(textContainerBlogs);
   containerPage2.append(pageContainerPage2);
 }
 
@@ -421,9 +505,45 @@ async function getBlogsByPage2() {
 }
 
 async function mainPage2() {
-  const bibleVerse = await getBlogsByPage2();
-  createBibleBlogsHTMLpage(bibleVerse);
-  return bibleVerse;
+  try {
+    const bibleVerse = await getBlogsByPage2();
+    createBibleBlogsHTMLpage(bibleVerse);
+
+    // sort
+    sortFormA.addEventListener("click", function () {
+      pageContainerPage2.innerHTML = "";
+      const sortedProducts = bibleVerse.sort(function (a, b) {
+        if (a.date > b.date) {
+          return 1;
+        } else if (a.date < b.date) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log(sortedProducts);
+
+      createBibleBlogsHTMLpage(sortedProducts);
+    });
+    sortFormB.addEventListener("click", function () {
+      pageContainerPage2.innerHTML = "";
+      const sortedProducts = bibleVerse.sort(function (a, b) {
+        if (a.date < b.date) {
+          return 1;
+        } else if (a.date > b.date) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log(sortedProducts);
+
+      createBibleBlogsHTMLpage(sortedProducts);
+    });
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = message("error", error);
+  }
 }
 
 mainPage2();
@@ -462,3 +582,16 @@ pageThree.addEventListener("click", function redirectToPage() {
   pageContainerPage3.style.display = "grid";
   pageContainerPage2.style.display = "none";
 });
+
+const sort = document.querySelector(".dropbtn");
+const dropDown = document.querySelector("#myDropdown");
+
+sort.onclick = function () {
+  dropDown.classList.toggle("show");
+};
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    dropDown.classList.remove("show");
+  }
+};

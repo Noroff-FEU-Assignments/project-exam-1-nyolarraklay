@@ -64,7 +64,32 @@
       </div>
     </header>
     <main>
-      <div class="allPagesContainer"></div>
+      <div class="allPagesContainer">
+        <div class="dropdown">
+          <button class="dropbtn">Sort by</button>
+          <div id="myDropdown" class="dropdown-content">
+            <ul>
+              <li>
+                <button class="ddList atoz">
+                  <ion-icon name="ellipse-outline"> </ion-icon
+                  ><span class="spanDrop">newest</span>
+                </button>
+              </li>
+              <li>
+                <button class="ddList ztoa">
+                  <ion-icon name="ellipse-outline"> </ion-icon
+                  ><span class="spanDrop">oldest</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="loading">
+          <div class="ring"></div>
+          <span>loading....</span>
+        </div>
+      </div>
+
       <div class="paginationBlogs">
         <ul class="blogList">
           <li class="link page1 active" value="1">1</li>

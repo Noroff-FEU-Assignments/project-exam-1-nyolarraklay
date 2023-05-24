@@ -7,9 +7,11 @@ import {
   mainAuthor,
 } from "./import.js";
 
+const loading = document.querySelector(".loading");
 async function main() {
   const bibleVerse = await getBlogs();
   createBlogsHTML(bibleVerse);
+  loading.style.display = "none";
 }
 
 main();
