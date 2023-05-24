@@ -819,6 +819,62 @@ footer p {
   }
 }
 
+@media (max-width: 500px) {
+  .blogsContainerCarousel {
+    flex-direction: column;
+  }
+  .carousel {
+    height: 100%;
+    max-width: 90dvw;
+  }
+  .carouselContainer {
+    height: 100%;
+    width: 100%;
+    max-width: 93dvw;
+    border-radius: 0.8em;
+    overflow: hidden;
+    position: absolute;
+    left: 20%;
+  }
+  .blogsContainer {
+    margin: 3vh 0;
+    flex-direction: column;
+  }
+  .contentContainer {
+    display: grid;
+    grid-template-rows: 564vh auto auto;
+  }
+
+  .arrow {
+    display: none;
+  }
+  .spiritualImage {
+    display: none;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .listContainer {
+    align-self: center;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .categories {
+    padding: 0px 15px;
+    display: grid;
+    margin: 0;
+    grid-template-columns: 88vw;
+    gap: 10px;
+    width: 90vw;
+  }
+}
+
 @media (max-width: 399px) {
   .blogImageDetails {
     height: 50vh;
@@ -925,7 +981,7 @@ footer p {
     border-radius: 0.8em;
     overflow: hidden;
     position: absolute;
-    left: 10%;
+    left: 20%;
   }
 
   .textContainer {
@@ -992,5 +1048,9 @@ footer p {
   .modalDetails {
     width: 200px;
     height: 25vh;
+  }
+
+  .blogsContainerCarousel {
+    flex-direction: column;
   }
 }
