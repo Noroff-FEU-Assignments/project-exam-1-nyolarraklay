@@ -595,3 +595,54 @@ window.onclick = function (event) {
     dropDown.classList.remove("show");
   }
 };
+const searchContainer = document.querySelector(".searchWrapper");
+const mainContainer = document.querySelector("main");
+const search = document.querySelector(".searchBar");
+const searchData = document.querySelector("#searchInput");
+const userCardContainer = document.querySelector(".userCard");
+const searchTemplate = document.querySelector("[searchTemplate]");
+
+let users = [];
+
+searchData.addEventListener("input", (e) => {
+  const value = e.target.value;
+
+  users.forEach((user) => {
+    const isVisible = user.name.toLowerCase().includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  });
+});
+
+fetch(blogsUrl)
+  .then((res) => res.json())
+  .then((data) => {
+    users = data.map((user) => {
+      const userCard = searchTemplate.content.cloneNode(true).children[0];
+      const cardHeader = document.createElement("div");
+      cardHeader.style.cursor = "pointer";
+
+      cardHeader.textContent = user.title.rendered;
+      userCard.append(cardHeader);
+      userCardContainer.append(userCard);
+      cardHeader.addEventListener("click", function redirectToPage() {
+        location.href = `details.html?id=${user.id}`;
+      });
+
+      return { name: user.title.rendered, element: userCard };
+    });
+  });
+
+function removeSearch() {
+  searchContainer.classList.add("hide");
+  userCardContainer.classList.add("hide");
+  search.classList.remove("hide");
+}
+mainContainer.addEventListener("click", removeSearch);
+
+function createSearch() {
+  searchContainer.classList.remove("hide");
+  userCardContainer.classList.remove("hide");
+  search.classList.add("hide");
+}
+
+search.addEventListener("click", createSearch);

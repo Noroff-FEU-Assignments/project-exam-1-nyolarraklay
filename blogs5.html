@@ -48,9 +48,19 @@
                 <a class="navLink" href="contact.html">Contact</a>
               </li>
               <li class="navItem">
-                <a class="navLink" href="#"
+                <a class="navLink searchBar" href="#"
                   ><ion-icon name="search-outline"></ion-icon>Search</a
                 >
+                <div class="searchWrapper hide">
+                  <label for="search">Search Title</label>
+                  <input type="search" id="searchInput" />
+                </div>
+                <div class="userCard hide"></div>
+                <template searchTemplate>
+                  <div class="cardSearch">
+                    <div class="headerSearch"></div>
+                  </div>
+                </template>
               </li>
             </ul>
             <div class="hamburger">
