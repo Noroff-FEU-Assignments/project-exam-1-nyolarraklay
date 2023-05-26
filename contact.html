@@ -70,14 +70,25 @@
           <div class="left"></div>
           <div class="right">
             <h2>Contact Us</h2>
-            <div class="form-error" id="nameError">Please enter your name</div>
+            <div class="form-error" id="nameError">
+              Should be more than 5 characters long
+            </div>
             <input type="text" class="field name" placeholder="Your Name" />
             <div class="form-error" id="emailError">
               Please enter a valid email address
             </div>
             <input type="text" class="field email" placeholder="Your Email" />
-
-            <input type="text" class="field phone" placeholder="Phone" />
+            <div class="form-error" id="subjectError">
+              Should be more than 15 characters long
+            </div>
+            <input
+              type="text"
+              class="field phone subject"
+              placeholder="Subject"
+            />
+            <div class="form-error" id="messageError">
+              Should be more than 25 characters long
+            </div>
             <textarea placeholder="Message" class="field message"></textarea>
             <div class="character-count">Character count: <span>0</span></div>
             <div class="success"></div>
