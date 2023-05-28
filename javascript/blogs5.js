@@ -234,6 +234,7 @@ function createBlogFilesHTML(blog) {
     blogImage.classList.add("blogImage");
     const imageHref = image.guid.rendered;
     blogImage.src = image.guid.rendered;
+    blogImage.alt = image.alt_text;
     blogContainerPage1.prepend(blogImage);
 
     const dialog = document.createElement("dialog");
@@ -409,6 +410,7 @@ function createBlogFilesHTMLPage(blog) {
     const blogImage = document.createElement("img");
     blogImage.classList.add("blogImage");
     blogImage.src = image.guid.rendered;
+    blogImage.alt = image.alt_text;
     blogContainer.prepend(blogImage);
 
     const dialog = document.createElement("dialog");
