@@ -1,10 +1,10 @@
 # Project-Exam-1
 
-<img src="Screenshot 2023-05-31 140917.png" alt="alt text" title="image Title" />
-
-
-
-
+<img src="PE_home1.png" alt="home1" title="image Title" />
+<img src="PE_home2.png" alt="home2" title="image Title" />
+<img src="PE_blogs.png" alt="blogs" title="image Title" />
+<img src="PE_details.png" alt="details" title="image Title" />
+<img src="PE_contact.png" alt="contact" title="image Title" />
 
 ## Description
 
