@@ -35,7 +35,7 @@ This repository consists of the following:
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:Noroff-FEU-Assignments/project-exam-1-nyolarraklay
+git clone [git@github.com:Noroff-FEU-Assignments/project-exam-1-nyolarraklay](https://github.com/Noroff-FEU-Assignments/project-exam-1-nyolarraklay.git)
 ```
 
 2. Install the dependencies:
