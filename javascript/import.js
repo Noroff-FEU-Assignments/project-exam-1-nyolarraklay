@@ -237,36 +237,6 @@ async function mainAuthor() {
   }
 }
 
-// pagination
-
-// function button2() {
-//   if (currentValue < 5) {
-//     link.forEach((element) => {
-//       element.classList.remove("active");
-//       backButton.style.display = "inline-flex";
-//     });
-//   }
-//   currentValue++;
-//   link[currentValue - 1].classList.add("active");
-
-//   if (currentValue === 5) {
-//     nxtButton.style.display = "none";
-//   }
-// }
-
-// function button1() {
-//   if (currentValue > 1) {
-//     link.forEach((element) => {
-//       element.classList.remove("active");
-//       nxtButton.style.display = "inline-flex";
-//     });
-//   } else if (currentValue === 1) {
-//     backButton.style.display = "none";
-//   }
-//   currentValue--;
-//   link[currentValue - 1].classList.add("active");
-// }
-
 let link = document.querySelectorAll(".link");
 let currentValue = 2;
 
